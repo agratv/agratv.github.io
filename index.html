@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Agra TV</title>
+    <base href="/" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/my/Custom.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet">
+    <link href="manifest.json" rel="manifest" />
+</head>
+
+<body style="overscroll-behavior-y: contain; ">
+    <div id="app">
+        <div style="width: 100%;padding-top: 14vh;height: 100vh">
+            <center style="width:100%">
+                <div class="card-header border-none bg-transparent d-flex align-items-center justify-content-between p-0 mb-10">
+                    <!--<div class="widgets-card-title" style="width: 100%">
+                        <h5 class="card-title mb-0">&diams; Mahinda Rajapaksha College &diams;</h5>
+                        <h6 class="card-title mb-0">Homagama</h6>
+                        <h3 class="breadcrumb-item active mb-0 font-13" style="width:100%">Teacher Leave Management System</h3>
+                    </div>
+                </div>
+                <div class="loadImg" style="background-image: url('img/logomrc.png');background-repeat:no-repeat;background-position:center;background-size:contain"></div>-->
+                    <div class="fixed-bottom">
+                        <div class="spinner-border text-danger mb-30" role="status"></div>
+                    </div>
+            </center>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        <div class="modal fade show" role="dialog" tabindex="-1" style="display: block; background-color:rgba(0, 0, 0,0.7);z-index: 1080;" aria-modal="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content bg-danger">
+                    <div class="modal-body">
+                        <center>
+                            <h5 class="modal-title">Opps!</h5>
+                            <hr />
+                            <h6>An Unhandled Error Has Occurred.</h6>
+                            <hr />
+                            <a href="" class="reload btn btn-rounded btn-success mb-2">Reload</a>
+                            <a class="dismiss btn btn-rounded btn-warning mb-2">Ignore & Continue</a>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bundle.js"></script>
+    <script src="js/default-assets/setting.js"></script>
+    <script src="js/default-assets/fullscreen.js"></script>
+    <script>
+        window.onbeforeunload = function (event) {
+            event.preventDefault();
+            event.returnValue = "Are You Sure You Want To Reload?";
+        };
+    </script>
+    <script>
+        function searchTable() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        window.ShowModal = async (id) => {
+            $(id).modal('show');
+        }
+        window.HideModal = async (id) => {
+            $(id).modal('hide');
+        }
+        window.ShowCollapse = async (id) => {
+            $(id).collapse('show');
+        }
+        window.HideCollapse = async (id) => {
+            $(id).collapse('hide');
+        }
+    </script>
+
+    <!-- Active JS -->
+    <script src="js/default-assets/active.js"></script>
+
+    <script src="js/jquery-knob-chart.js"></script>
+    <script>
+        function DrawLveCharts() {
+            $(".knob").knob()
+        };
+    </script>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <!--<script>navigator.serviceWorker.register('service-worker.js');</script>-->
+</body>
+
+</html>
